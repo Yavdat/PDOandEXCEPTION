@@ -6,13 +6,13 @@ class NewsController
 
     public function actionAll()
     {
+        $art=NewsModel::findOneByColumn('title','Today in the world');
+        $art->title='Today in the country';
+        $art->text='Is calm...';
+        $art->save();
 
-        $article=new NewsModel();
+        var_dump($art->id);
 
-        $article->title='ывапыв';
-        $article->text='пыврыв!';
-        $article->insert();
-        die;
     /*
         $news=News::getAll();
         $view=new View();

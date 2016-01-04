@@ -26,9 +26,11 @@ class DB
 
     public function execute($sql,$params=[])
     {
-        var_dump($params);
-        var_dump($sql);
         $sth=$this->dbh->prepare($sql);
         return $sth->execute($params);
+    }
+    public function lastInsertId()
+    {
+        return $this->dbh->lastInsertId();
     }
 }
